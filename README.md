@@ -8,15 +8,15 @@
 # Для разворачивания веб-приложения будем идти по следующим шагам:
 ##1.ConfigMap
 ```bash
-  kubectl apply -f nginx-configmap.yaml
+  kubectl apply -f configmap.yaml
 ```
 ##2.Deployment
 ```bash
-  kubectl apply -f nginx-deployment.yaml
+  kubectl apply -f deployment.yaml
 ```
 ##3.Service
 ```bash
-  kubectl apply -f nginx-service.yaml
+  kubectl apply -f service.yaml
 ```
 ##4.Установка Ingress Nginx контроллера
 ```bash
@@ -26,7 +26,7 @@
 ```
 ##5.Создание Ingress
 ```bash
-  kubectl apply -f nginx-ingress.yaml
+  kubectl apply -f ingress.yaml
 ```
 ## Логи:
 ```bash
