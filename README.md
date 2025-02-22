@@ -54,9 +54,14 @@ kubectl get ingress -n vk
 ```
 ![Pods, Svc, Ingress](images/pods.jpg)
 
-## Проверка работоспособности Ingress
+## Проверка работоспособности и логи
 `<link>` : <http://ip-address>
 ![Ingress](images/web01.jpg)
 
 `<link>` : <http://hello.local>
 ![Ingress](images/web02.jpg)
+- в логах можно увидеть сообщения с кодом `200` и `304`, говорящие об успешности запроса
+```bash
+kubectl logs nginx-default-backend-6fd64768b8-95ffb -n vk
+```
+![Logs](images/logs.jpg)
