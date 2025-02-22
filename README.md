@@ -1,4 +1,4 @@
-#Разворачивание веб-приложения в Kubernetes
+# Разворачивание веб-приложения в Kubernetes
 ![Schema](images/vk_tech.jpg)
 
 ## Описание
@@ -9,14 +9,14 @@
 Приложение должно быть доступно извне кластера через Ingress.
 ```
 
-##Namespace
+## Namespace
 Все действия будем выполнять в namespace "vk"
 ```bash
   kubectl create namespace vk
 ```
 
 ## Для разворачивания веб-приложения будем создавать слеующие объекты:
-##1.ConfigMap
+### 1.ConfigMap
 ```bash
   kubectl apply -f configmap.yaml
 ```
