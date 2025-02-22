@@ -1,7 +1,7 @@
 # Разворачивание веб-приложения в Kubernetes
 ![Schema](images/vk_tech.jpg)
 
-## Описание
+## Описание задачи
 ```text
 Разворачивание веб-приложения в kubernetes, состоящее из 2-х компонентов:
 - Ingress Nginx в качестве контроллера для маршрутизации внешнего трафика.
@@ -10,21 +10,24 @@
 ```
 
 ## Namespace
-Все действия будем выполнять в namespace "vk"
+Все действия будем выполнять в namespace "vk", для этого создадим namespace
 ```bash
 kubectl create namespace vk
 ```
 
 ## Для разворачивания веб-приложения будем создавать следующие объекты:
 ### 1. ConfigMap
+Создадим ConfigMap, содержащий файл index.html с текстом "Hello, Kubernetes!".
 ```bash
 kubectl apply -f configmap.yaml
 ```
 ### 2. Deployment
+Создадим Deployment для nginx-default-backend с 1 репликой (используем образ nginx).
 ```bash
 kubectl apply -f deployment.yaml
 ```
 ### 3. Service
+Создадим Service типа ClusterIP для nginx-default-backend.
 ```bash
 kubectl apply -f service.yaml
 ```
@@ -41,6 +44,7 @@ helm repo update
 helm install ingress-nginx ingress-nginx/ingress-nginx
 ```
 ### 5. Ingress
+Создадим Ingress для маршрутизации запросов на бэкенд по хосту `hello.local`.
 ```bash
 kubectl apply -f ingress.yaml
 ```
