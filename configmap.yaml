@@ -18,7 +18,8 @@ data:
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-family: Arial, sans-serif;
+                font-family: Cascadia Code, monospace;
+                background-color: #d0e7e5;
             }
         </style>
     </head>

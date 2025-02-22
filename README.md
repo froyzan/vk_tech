@@ -15,26 +15,26 @@
   kubectl create namespace vk
 ```
 
-## Для разворачивания веб-приложения будем создавать слеующие объекты:
-### 1.ConfigMap
+## Для разворачивания веб-приложения будем создавать следующие объекты:
+### 1. ConfigMap
 ```bash
   kubectl apply -f configmap.yaml
 ```
-##2.Deployment
+### 2. Deployment
 ```bash
   kubectl apply -f deployment.yaml
 ```
-##3.Service
+### 3. Service
 ```bash
   kubectl apply -f service.yaml
 ```
-##4.Установка Ingress Nginx контроллера (если не установлен)
+### 4. Установка Ingress Nginx контроллера (если не установлен)
 ```bash
   helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
   helm repo update
   helm install ingress-nginx ingress-nginx/ingress-nginx
 ```
-##5.Ingress
+### 5. Ingress
 ```bash
   kubectl apply -f ingress.yaml
 ```
