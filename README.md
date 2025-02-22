@@ -29,6 +29,12 @@
   kubectl apply -f service.yaml
 ```
 ### 4. Установка Ingress Nginx контроллера (если не установлен)
+- для minikube
+```bash
+  minikube addons enable ingress
+```
+![Minikube Addons](images/minikube_addons.jpg)
+- для kubernetes cluster
 ```bash
   helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
   helm repo update
@@ -39,16 +45,17 @@
   kubectl apply -f ingress.yaml
 ```
 
-## Логи:
+## Проверка, что все поды запущены и работают:
 ```bash
   kubectl get pods -n vk
   kubectl get svc -n vk
   kubectl get ingress -n vk
 ```
+![Pods, Svc, Ingress](images/pods.jpg)
 
 ## Проверка работоспособности Ingress
-`<link>` : <http://hello.local>
+`<link>` : <http://ip-address>
 ![Ingress](images/web01.jpg)
 
-`<link>` : <http://ip-address>
+`<link>` : <http://hello.local>
 ![Ingress](images/web02.jpg)
