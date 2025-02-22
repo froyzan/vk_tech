@@ -48,6 +48,7 @@ kubectl apply -f ingress.yaml
 
 ## Проверка, что все поды запущены и работают:
 ```bash
+kubectl get deploy -n vk
 kubectl get pods -n vk
 kubectl get svc -n vk
 kubectl get ingress -n vk
